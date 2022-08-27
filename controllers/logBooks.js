@@ -1,4 +1,4 @@
-const Logs = require('../models/logBook');
+const Log = require('../models/logBook');
 const router = require('express').Router();
 
 
@@ -6,7 +6,7 @@ const router = require('express').Router();
 
 router.get('/', async (req, res) => {
 try {
-    res.status(200).json(await Logs.find({}))
+    res.status(200).json(await Log.find({}))
 } catch (error) {
     res.status(400).json({ message: 'bad request' })
 }
@@ -14,7 +14,7 @@ try {
 // CREATE
 router.post('/', async (req, res) => {
 try {
-    res.status(201).json(await Logs.create(req.body));
+    res.status(201).json(await Log.create(req.body));
 } catch(error) {
     res.status(400).json({ message: 'bad request' })
 }
@@ -22,7 +22,7 @@ try {
 // DELETE
 router.delete('/:id', async (req, res) => {
 try {
-    res.status(200).json(await Logs.findByIdAndRemove(req.params.id))
+    res.status(200).json(await Log.findByIdAndRemove(req.params.id))
 } catch (error) {
     res.status(400).json({ message: 'bad request'})
 }
@@ -31,7 +31,7 @@ try {
 // UPDATE
 router.put('/:id', async (req, res) => {
 try {
-    res.status(200).json(await Logs.findByIdAndUpdate(req.params.id, req.body, { new:true })
+    res.status(200).json(await Log.findByIdAndUpdate(req.params.id, req.body, { new:true })
     );
 } catch (error) {
     res.status(400).json({ message: 'bad request'})

@@ -9,10 +9,6 @@ const morgan = require('morgan');
 const logRouter = require('./controllers/logBooks')
 
 
-app.get("/", (req, res) => {
-    res.send("hello world");
-});
-
 mongoose.connect(DATABASE_URL)
 
 

@@ -15,6 +15,7 @@ try {
 router.post('/', async (req, res) => {
 try {
     res.status(201).json(await Log.create(req.body));
+    console.log('req.body',req.body)
 } catch(error) {
     res.status(400).json({ message: 'bad request' })
 }

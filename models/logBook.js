@@ -1,17 +1,17 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const logSchema = new Schema({
-    log: { type: String, required: true },
-    image: { data: Buffer, contentType: String, required: false},
-    start: { type: String, required: true},
-    end: { type: String, required: true},
-    date: { type: Date, default: Date.now, required: true},
-    volts: { type: Number, required: false},
-    amps: { type: Number, required: false},
-    pressure: { type: Number, required: false},
-    ohms: { type: Number, required: false},
-    returned: {type: Boolean, default: false, required: true }
+    component: { type: String, required: false },
+    log: { type: String, required: false },
+    // image: { data: Buffer, contentType: String, required: false},
+    start: { type: String, required: false},
+    end: { type: String, required: false},
+    volts: { type: String, required: false},
+    amps: { type: String, required: false},
+    pressure: { type: String, required: false},
+    ohms: { type: String, required: false},
+    // returned: {type: Boolean, default: false, required: false }
 }, { timestamps: true});
 
 module.exports = mongoose.model("Log", logSchema)

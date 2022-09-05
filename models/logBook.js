@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const logSchema = new Schema({
     component: { type: String, required: false },
     log: { type: String, required: false },
+    turbine: {type: String, required: false},
     // image: { data: Buffer, contentType: String, required: false},
     start: { type: String, required: false},
     end: { type: String, required: false},
